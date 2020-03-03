@@ -16,7 +16,7 @@ jobs:
       with:
         java-version: 1.8
     - name: Install and Run Appium Server
-      run: set -ex npm install -g appium appium &>/dev/null &  echo $0
+      run: /bin/bash set -ex npm install -g appium appium &>/dev/null &
     - name: Run Appium Tests
       uses: reactivecircus/android-emulator-runner@v1
       with:
