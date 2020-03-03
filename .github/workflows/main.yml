@@ -26,5 +26,5 @@ jobs:
         target: ${{ matrix.target }}
         arch: x86_64
         profile: Nexus 6
-        script: ./gradlew test
+        script: ./gradlew test --info
   
