@@ -22,4 +22,4 @@ jobs:
         target: ${{ matrix.target }}
         arch: x86_64
         profile: Nexus 6
-        script: chmod +x gradlew ./gradlew clean test
+        script: ./gradlew clean test
