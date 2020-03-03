@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -27,8 +28,11 @@ public class Demo {
 
     @Test
     public void test_appium() throws MalformedURLException, InterruptedException {
-
-        driver.findElement(By.id("my_text_field")).sendKeys("Hello GitHub Actions");
+        String message = "Hello GitHub Actions";
+        WebElement messageTxt = driver.findElement(By.id("my_text_field"));
+        messageTxt.sendKeys(message);
+        System.out.println(messageTxt.getText());
+        Assert.assertEquals(message,messageTxt.getText());
     }
 
     @AfterClass
