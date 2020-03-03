@@ -14,7 +14,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Demo {
+
     WebDriver driver;
+
     @BeforeClass
     public void setUp() throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
@@ -27,7 +29,7 @@ public class Demo {
     }
 
     @Test
-    public void test_appium() throws MalformedURLException, InterruptedException {
+    public void test_Appium() throws MalformedURLException, InterruptedException {
         String message = "Hello GitHub Actions";
         WebElement messageTxt = driver.findElement(By.id("my_text_field"));
         messageTxt.sendKeys(message);
@@ -40,5 +42,4 @@ public class Demo {
     {
         driver.quit();
     }
-
 }
