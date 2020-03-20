@@ -19,8 +19,6 @@ jobs:
         java-version: 1.8
     - name: Install and Run Appium Server
       uses: moatazeldebsy/appium-server-gitHub-action@V1.0.4
-    - name: Android Emulator
-      uses: vgaidarji/android-github-actions-emulator@v1.0.1
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
