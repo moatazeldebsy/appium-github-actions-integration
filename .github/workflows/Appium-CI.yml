@@ -15,8 +15,6 @@ jobs:
     - name: Android Github Action
       uses: Vukan-Markovic/Github-Android-Action@1.2
     - uses: malinskiy/action-android/install-sdk@release/0.0.5
-    - run: adb devices
-    - run: echo $ANDROID_HOME
     - name: Install and Run Appium Server
       uses: moatazeldebsy/appium-server-gitHub-action@V1.0.4
     - name: Start Android Emulator
