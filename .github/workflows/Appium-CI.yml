@@ -19,7 +19,9 @@ jobs:
       uses: moatazeldebsy/appium-server-gitHub-action@V1.0.4
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-    - name: Android Emulator
-      uses: vgaidarji/android-github-actions-emulator@v1.0.1
+    - name: Run Android Emulator
+      run: |
+        chmod +x ./scripts/run-emulator.sh
+        ./scripts/emulator.sh
     - name: Build with Gradle
       run: ./gradlew test
