@@ -19,7 +19,7 @@ jobs:
     - name: Start Android Emulator
       run: |
         chmod +x ./scripts/run-emulator.sh
-        ./scripts/run-emulator.sh.sh
+        ./scripts/run-emulator.sh
     - name: Run UI Tests
       run: chmod +x gradlew
     - name: Build with Gradle
