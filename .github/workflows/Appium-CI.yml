@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -17,11 +17,11 @@ jobs:
       uses: kineticengines/setup-android-actions@v0.1
     - name: Install and Run Appium Server
       uses: moatazeldebsy/appium-server-gitHub-action@V1.0.4
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-    - name: Run Android Emulator
-      run: |
-        chmod +x ./scripts/run-emulator.sh
-        ./scripts/run-emulator.sh
-    - name: Build with Gradle
-      run: ./gradlew test
+    - name: Run Appium Tests
+      uses: reactivecircus/android-emulator-runner@v1
+      with:
+        api-level: ${{ matrix.api-level }}
+        target: ${{ matrix.target }}
+        arch: x86_64
+        profile: Nexus 6
+        script: ./gradlew test --info
