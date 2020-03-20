@@ -5,9 +5,9 @@ set -eu
 # start android emulator
 START=`date +%s` > /dev/null
 
-echo no | $ANDROID_HOME/tools/android create avd --force -n test -t android-21 --abi default/armeabi-v7a
-$ANDROID_HOME/tools/android list avd
-$ANDROID_HOME/tools/emulator64-arm -avd test -no-window -no-boot-anim -no-audio -verbose &
+echo no | ${ANDROID_HOME}/tools/android create avd --force -n test -t android-21 --abi default/armeabi-v7a
+${ANDROID_HOME}/tools/android list avd
+${ANDROID_HOME}/tools/emulator64-arm -avd test -no-window -no-boot-anim -no-audio -verbose &
 
 bootanim=""
 failcounter=0
@@ -29,8 +29,8 @@ done
 
 echo "Emulator is ready"
 # Unlock the Lock Screen
-$ANDROID_HOME/platform-tools/adb shell input keyevent 82 &
-$ANDROID_HOME/platform-tools/adb shell input keyevent 4 &
+${ANDROID_HOME}/platform-tools/adb shell input keyevent 82 &
+${ANDROID_HOME}/platform-tools/adb shell input keyevent 4 &
 DURATION=$(( `date +%s` - START )) > /dev/null
 echo "Android Emulator started after $DURATION seconds."
 
