@@ -19,8 +19,8 @@ jobs:
       uses: moatazeldebsy/appium-server-gitHub-action@V1.0.4
     - name: Start Android Emulator
       run: |
-        chmod +x ./scripts/run-emulator.sh
-        ./scripts/run-emulator.sh
+        chmod +x ./scripts/emulator.sh
+        ./scripts/emulator.sh
     - name: Run UI Tests
       run: chmod +x gradlew
     - name: Build with Gradle
