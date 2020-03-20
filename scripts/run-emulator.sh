@@ -4,6 +4,8 @@ set -eu
 
 # start android emulator
 START=`date +%s` > /dev/null
+cd $ANDROID_HOME/tools/bin
+./sdkmanager.bat --licenses
 sdkmanager --list | grep system-images
 sdkmanager --install "system-images;android-29;default;x86"
 
