@@ -1,12 +1,14 @@
 #!/bin/bash
 
 set -eu
+cd $ANDROID_HOME/tools/bin
 sdkmanager --list
 
 # start android emulator
-echo no | $ANDROID_HOME/tools/bin avdmanager create avd -n Android28 -k "system-images;android-28;google_apis;x86"
-$ANDROID_HOME/tools/bin avdmanager list avd
-$ANDROID_HOME/tools/emulator -avd test -no-window -no-boot-anim -no-audio -verbose &
+echo no | avdmanager create avd -n Android28 -k "system-images;android-28;google_apis;x86"
+avdmanager list avd
+cd ..
+emulator -avd test -no-window -no-boot-anim -no-audio -verbose &
 
 bootanim=""
 failcounter=0
