@@ -2,7 +2,7 @@
 
 set -eu
 # start android emulator
-echo no | $ANDROID_HOME/tools/android create avd --force -n test --abi efault/armeabi-v7a -k 'system-images;android-29;default;x86'
+echo no | $ANDROID_HOME/tools/android create avd --force --name testAVD --abi google_apis/x86_64 --package 'system-images;android-23;google_apis;x86_64'
 $ANDROID_HOME/tools/android list avd
 $ANDROID_HOME/tools/emulator64-arm -avd test -no-window -no-boot-anim -no-audio -verbose &
 
