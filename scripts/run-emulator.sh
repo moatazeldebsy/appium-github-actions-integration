@@ -5,7 +5,7 @@ cd $ANDROID_HOME/tools/bin
 sdkmanager --list
 
 # start android emulator
-echo no | avdmanager create avd -n Android28 -k 'system-images;android-28;google_apis;x86'
+echo no | avdmanager create avd -n Android26 -k 'system-images;android-25;google_apis;arm64-v8a'
 avdmanager list avd
 cd ..
 emulator -avd test -no-window -no-boot-anim -no-audio -verbose &
