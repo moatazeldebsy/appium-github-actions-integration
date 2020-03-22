@@ -4,7 +4,7 @@ set -eu
 cd $ANDROID_HOME/tools/bin
 sdkmanager --list
 # start android emulator
-echo no | $ANDROID_HOME/tools/android create avd --force --name testAVD --abi google_apis/x86_64 --package 'system-images;android-10;default;armeabi-v7a '
+echo no | $ANDROID_HOME/tools/android avdmanager create avd -n Android28 -k "system-images;android-28;google_apis;x86"
 $ANDROID_HOME/tools/android list avd
 $ANDROID_HOME/tools/emulator64-arm -avd test -no-window -no-boot-anim -no-audio -verbose &
 
