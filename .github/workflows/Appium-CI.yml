@@ -20,38 +20,17 @@ jobs:
     - name: Install Android System Image
       run: |
         cd $ANDROID_HOME/tools/bin
-        sdkmanager --list
         sdkmanager "system-images;android-23;google_apis;armeabi-v7a"
         sdkmanager --licenses
     - name: Start Android Emulator
       run: | 
         cd $ANDROID_HOME/tools/bin
-        echo no | avdmanager create avd -n test -k 'system-images;android-23;google_apis;armeabi-v7a'
-        avdmanager list avd
-        cd ..
-        emulator -avd test -no-window -no-boot-anim -no-audio -verbose &
-        bootanim=""
-        failcounter=0
-        timeout_in_sec=360
-        until [[ "$bootanim" =~ "stopped" ]]; do
-        bootanim=`adb -e shell getprop init.svc.bootanim 2>&1 &`
-        if [[ "$bootanim" =~ "device not found" || "$bootanim" =~ "device offline"
-        || "$bootanim" =~ "running" ]]; then
-        let "failcounter += 1"
-        echo "Waiting for emulator to start"
-        if [[ $failcounter -gt timeout_in_sec ]]; then
-        echo "Timeout ($timeout_in_sec seconds) reached; failed to start emulator"
-        exit 1
-        fi
-        fi
-        sleep 1
-        done
-        echo "Emulator is ready"
-        $ANDROID_HOME/platform-tools/adb shell input keyevent 82 &
-        $ANDROID_HOME/platform-tools/adb shell input keyevent 4 &
-        DURATION=$(( `date +%s` - START )) > /dev/null
-        echo "Android Emulator started after $DURATION seconds."
-        sleep 60
+        echo no | avdmanager create avd -n test -k "ssystem-images;android-23;google_apis;armeabi-v7a" --force
+        cd $ANDROID_HOME/emulator
+        emulator -avd test -no-window -no-audio -debug-init > /dev/null 2>&1 &
+        echo "Waiting emulator is ready..."
+        adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done; input keyevent 82'
+        echo "Emulator is ready!"
     - name: Run UI Tests
       run: chmod +x gradlew
     - name: Build with Gradle
