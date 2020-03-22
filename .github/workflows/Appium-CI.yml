@@ -24,7 +24,7 @@ jobs:
         sdkmanager --licenses
     - name: Start Android Emulator
       run: | 
-        echo y | $ANDROID_HOME/tools/android update sdk --all --filter build-tools-23 --no-ui
+        echo y | $ANDROID_HOME/tools/android update sdk --no-ui -t platform-tool
         adb version
         cd $ANDROID_HOME/tools/bin
         echo no | avdmanager create avd -n test -k "system-images;android-23;google_apis;armeabi-v7a" --force
