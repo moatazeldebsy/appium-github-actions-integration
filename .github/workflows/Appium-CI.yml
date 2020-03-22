@@ -30,8 +30,8 @@ jobs:
         echo y | $ANDROID_HOME/tools/android update sdk --no-ui -t platform-tool
         cd $ANDROID_HOME/tools/bin
         echo no | avdmanager create avd -n test -k "system-images;android-23;google_apis;armeabi-v7a" --force
-        cd $ANDROID_HOME/platform-tools
-        emulator -avd test -no-window -no-audio
+        cd ..
+        emulator -avd test -no-window -no-boot-anim -no-audio -verbose &
         echo "Waiting emulator is ready..."
         echo "Emulator is ready!"
     - name: Run UI Tests
