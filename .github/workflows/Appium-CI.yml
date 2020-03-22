@@ -29,9 +29,8 @@ jobs:
         cd ..
         emulator -avd test -no-window -no-audio -debug-init > /dev/null 2>&1 &
         echo "Waiting emulator is ready..."
-        cd ..
-        sudo apt-get install lib32z1 lib32z1-dev
-        sudo apt-get install lib32stdc++6
+        sudo apt-get install android-tools-adb android-tools-fastboot
+        adb version
         adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done; input keyevent 82'
         echo "Emulator is ready!"
     - name: Run UI Tests
