@@ -1,14 +1,7 @@
 #!/bin/bash
 
 set -eu
-echo $ANDROID_HOME
 # start android emulator
-START=`date +%s` > /dev/null
-cd $ANDROID_HOME/tools/bin
-./sdkmanager.bat --licenses
-sdkmanager --list | grep system-images
-sdkmanager --install "system-images;android-29;default;x86"
-
 echo no | $ANDROID_HOME/tools/android create avd --force -n test --abi efault/armeabi-v7a -k 'system-images;android-29;default;x86'
 $ANDROID_HOME/tools/android list avd
 $ANDROID_HOME/tools/emulator64-arm -avd test -no-window -no-boot-anim -no-audio -verbose &
