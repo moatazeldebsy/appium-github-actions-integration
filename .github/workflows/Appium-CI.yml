@@ -17,12 +17,14 @@ jobs:
     - uses: malinskiy/action-android/install-sdk@release/0.0.5
     - name: Install and Run Appium Server
       uses: moatazeldebsy/appium-server-gitHub-action@V1.0.4
-    - name: Start Android Emulator
+    - name: Install Android System Image
       run: |
         cd $ANDROID_HOME/tools/bin
         sdkmanager --list
         sdkmanager "system-images;android-23;google_apis;armeabi-v7a"
         sdkmanager --licenses
+    - name: Start Android Emulator
+      run: | 
         chmod +x ./scripts/run-emulator.sh
         ./scripts/run-emulator.sh
     - name: Run UI Tests
