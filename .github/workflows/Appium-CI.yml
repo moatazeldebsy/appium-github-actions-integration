@@ -33,8 +33,6 @@ jobs:
         cd $ANDROID_HOME/platform-tools
         emulator -avd test -no-window -no-audio
         echo "Waiting emulator is ready..."
-        
-        adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done; input keyevent 82'
         echo "Emulator is ready!"
     - name: Run UI Tests
       run: chmod +x gradlew
