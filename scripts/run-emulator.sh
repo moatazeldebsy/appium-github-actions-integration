@@ -2,6 +2,7 @@
 
 set -eu
 # start android emulator
+cd $ANDROID_HOME/tools/bin
 echo no | avdmanager create avd -n Android26 -k 'system-images;android-23;google_apis;armeabi-v7a'
 avdmanager list avd
 cd ..
