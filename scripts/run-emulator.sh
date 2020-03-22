@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -eu
-
+echo $ANDROID_HOME
 # start android emulator
 START=`date +%s` > /dev/null
 cd $ANDROID_HOME/tools/bin
