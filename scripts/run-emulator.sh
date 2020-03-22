@@ -3,10 +3,10 @@
 set -eu
 cd $ANDROID_HOME/tools/bin
 sdkmanager --list
-sdkmanager "system-images;android-25;google_apis;arm64-v8a"
+sdkmanager "system-images;android-23;google_apis;armeabi-v7a"
 sdkmanager --licenses
 # start android emulator
-echo no | avdmanager create avd -n Android26 -k 'system-images;android-25;google_apis;arm64-v8a'
+echo no | avdmanager create avd -n Android26 -k 'system-images;android-23;google_apis;armeabi-v7a'
 avdmanager list avd
 cd ..
 emulator -avd test -no-window -no-boot-anim -no-audio -verbose &
