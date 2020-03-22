@@ -1,10 +1,6 @@
 #!/bin/bash
 
 set -eu
-cd $ANDROID_HOME/tools/bin
-sdkmanager --list
-sdkmanager "system-images;android-23;google_apis;armeabi-v7a"
-sdkmanager --licenses
 # start android emulator
 echo no | avdmanager create avd -n Android26 -k 'system-images;android-23;google_apis;armeabi-v7a'
 avdmanager list avd
