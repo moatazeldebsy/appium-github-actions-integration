@@ -31,7 +31,7 @@ jobs:
         cd $ANDROID_HOME/tools/bin
         echo no | avdmanager create avd -n test -k "system-images;android-23;google_apis;armeabi-v7a" --force
         cd $ANDROID_HOME/platform-tools
-        emulator -avd test -no-window -no-audio -debug-init > /dev/null 2>&1 &
+        emulator -avd test -no-window -no-audio
         echo "Waiting emulator is ready..."
         
         adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done; input keyevent 82'
