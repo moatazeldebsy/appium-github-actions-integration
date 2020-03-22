@@ -26,7 +26,7 @@ jobs:
     - name: Start Android Emulator
       run: | 
         cd $ANDROID_HOME/tools/bin
-        echo no | avdmanager create avd -n Android26 -k 'system-images;android-23;google_apis;armeabi-v7a'
+        echo no | avdmanager create avd -n test -k 'system-images;android-23;google_apis;armeabi-v7a'
         avdmanager list avd
         cd ..
         emulator -avd test -no-window -no-boot-anim -no-audio -verbose &
