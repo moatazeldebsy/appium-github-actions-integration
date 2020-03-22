@@ -22,14 +22,14 @@ jobs:
         cd $ANDROID_HOME/tools/bin
         sdkmanager "system-images;android-23;google_apis;armeabi-v7a"
         sdkmanager --licenses
+        echo y | $ANDROID_HOME/tools/android update sdk --no-ui -t platform-tool
+        cd $ANDROID_HOME
+        ls
     - name: Start Android Emulator
       run: | 
         echo y | $ANDROID_HOME/tools/android update sdk --no-ui -t platform-tool
-        adb version
         cd $ANDROID_HOME/tools/bin
         echo no | avdmanager create avd -n test -k "system-images;android-23;google_apis;armeabi-v7a" --force
-        cd ..
-        ls
         cd $ANDROID_HOME/platform-tools
         emulator -avd test -no-window -no-audio -debug-init > /dev/null 2>&1 &
         echo "Waiting emulator is ready..."
