@@ -1,4 +1,4 @@
-name: Appium CI
+name: Appium CI test
 # on push we will trigger our code
 on: [push]
 
