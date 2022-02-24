@@ -2,7 +2,6 @@ name: Appium CI
 # on push we will trigger our code
 on: [push]
 
-
 jobs:
   build:
     runs-on: macos-latest # the machine type
