@@ -1,6 +1,5 @@
-name: Appium CI
-# on push we will trigger our code
-on: [push]
+on:
+  workflow_dispatch:
 
 jobs:
   build:
