@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class Demo {
+public class DemoTest {
 
     WebDriver driver;
 
@@ -20,21 +20,21 @@ public class Demo {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("automationName" , "espresso");
         caps.setCapability("platformName" , "Android");
-        caps.setCapability("platformVersion" , "7.1.1");
-        caps.setCapability("deviceName" , "Android Emulator");
-        caps.setCapability("app" , System.getProperty("user.dir")+"/apps/selendroid-test-app-0.17.0.apk");
-        driver = new AndroidDriver<>(new URL("http://localhost:4723/wd/hub"), caps);
+        caps.setCapability("appium:platformVersion" , "7.1.1");
+        caps.setCapability("appium:deviceName" , "Android Emulator");
+        caps.setCapability("appium:app" ,
+                System.getProperty("user.dir")+"/apps/selendroid-test-app-0.17.0.apk");
+        driver = new AndroidDriver(new URL("http://localhost:4723"), caps);
     }
 
     @Test
-    public void test_Appium() throws MalformedURLException, InterruptedException {
+    public void test_Appium() {
         String message = "Hello GitHub Actions";
         WebElement messageTxt = driver.findElement(By.id("my_text_field"));
         messageTxt.sendKeys(message);
         System.out.println(messageTxt.getText());
         Assert.assertEquals(message,messageTxt.getText());
     }
-
     @AfterClass
     public void tearDown()
     {
