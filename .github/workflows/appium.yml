@@ -16,13 +16,14 @@ jobs:
     steps:
     - name: Install the Emulator
       run: |
-        ls -la
         chmod +x ./scripts/install-android-sdk.sh
-        
+        ./scripts/install-android-sdk.sh
+      shell: bash
     - name: Boot the Emulator
       run: |
         chmod +x ./scripts/emulator-up.sh
-        
+        ./scripts/emulator-up.sh
+      shell: bash
     - name: Install and Run Appium Server
       uses: moatazeldebsy/Appium-Server-GitHub-Action@V1.0.7 
     - uses: actions/checkout@v2
