@@ -21,7 +21,7 @@ jobs:
         chmod +x ./scripts/RunAppiumServer.sh # install and run appium server in the background
         ./scripts/RunAppiumServer.sh
     - name: Run Appium Tests
-      uses: reactivecircus/android-emulator-runner@v1 # install and create the Emulator
+      uses: reactivecircus/android-emulator-runner@v2.27.0 # install and create the Emulator
       with:
         api-level: ${{ matrix.api-level }}
         target: ${{ matrix.target }}
