@@ -27,4 +27,3 @@ yes | sdkmanager "system-images;android-28;google_apis;x86_64"
 emulator -version
 
 echo "INSTALL ANDROID SDK DONE!"
-echo "run emulator-up.sh [new device name] to start emulator"
