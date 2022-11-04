@@ -12,7 +12,7 @@ jobs:
       matrix:
         api-level: [28]
         target: [default]
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11
@@ -23,13 +23,8 @@ jobs:
         cache: 'gradle'
     - name: Install the Emulator
       run: |
-        chmod +x ./scripts/install-android-sdk.sh
-        ./scripts/install-android-sdk.sh
-      shell: bash
-    - name: Boot the Emulator
-      run: |
-        chmod +x ./scripts/emulator-up.sh
-        ./scripts/emulator-up.sh
+        chmod +x ./scripts/RunAppiumServer.sh
+        ./scripts/RunAppiumServer.sh
       shell: bash
     - name: Install and Run Appium Server
       uses: moatazeldebsy/Appium-Server-GitHub-Action@V1.0.7 
