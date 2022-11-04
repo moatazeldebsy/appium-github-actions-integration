@@ -20,20 +20,19 @@ public class DemoTest {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("automationName" , "espresso");
         caps.setCapability("platformName" , "Android");
-        caps.setCapability("appium:platformVersion" , "7.1.1");
+        caps.setCapability("appium:platformVersion" , "9");
         caps.setCapability("appium:deviceName" , "Android Emulator");
         caps.setCapability("appium:app" ,
-                System.getProperty("user.dir")+"/apps/selendroid-test-app-0.17.0.apk");
+                System.getProperty("user.dir")+"/apps/app-debug.apk");
         driver = new AndroidDriver(new URL("http://localhost:4723"), caps);
     }
 
     @Test
     public void test_Appium() {
-        String message = "Hello GitHub Actions";
-        WebElement messageTxt = driver.findElement(By.id("my_text_field"));
-        messageTxt.sendKeys(message);
-        System.out.println(messageTxt.getText());
-        Assert.assertEquals(message,messageTxt.getText());
+        driver.findElement(By.id("buttonFive")).click();
+        driver.findElement(By.id("buttonAdd")).click();
+        driver.findElement(By.id("buttonFour")).click();
+        driver.findElement(By.id("buttonEqual")).click();
     }
     @AfterClass
     public void tearDown()
