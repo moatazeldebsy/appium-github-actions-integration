@@ -7,7 +7,7 @@ jobs:
     runs-on: macos-latest # the machine type
     strategy: # we are using strategy if we need to run on parallel with different devices and version
       matrix:
-        api-level: [25] #Google api level for example [25,23,28] 
+        api-level: [28] #Google api level for example [25,23,28] 
         target: [default]
     steps:
     - uses: actions/checkout@v2 #checkout the code 
