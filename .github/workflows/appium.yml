@@ -25,10 +25,7 @@ jobs:
       run: |
         chmod +x ./scripts/RunAppiumServer.sh
         ./scripts/RunAppiumServer.sh
-      shell: bash
-    - name: Install and Run Appium Server
-      uses: moatazeldebsy/Appium-Server-GitHub-Action@V1.0.7 
-    
+      shell: bash   
     - name: Run Appium Tests
       uses: reactivecircus/android-emulator-runner@v2.27.0
       with:
