@@ -17,7 +17,7 @@ emulator -version
 echo no | avdmanager create avd -n avd28 -k "system-images;android-28;google_apis;x86_64"
 
 # start the emulator
-emulator -avd avd28 -no-audio -no-window &
+emulator -avd avd28 -no-audio -no-window -no-accel &
 
 # show connected virtual device
 adb devices
