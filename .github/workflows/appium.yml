@@ -16,6 +16,7 @@ jobs:
       with:
         distribution: 'temurin'
         java-version: 11
+        cache: 'gradle'
     - name: Install and Run Appium Server
       run: |
         chmod +x ./scripts/RunAppiumServer.sh # install and run appium server in the background
