@@ -1,4 +1,4 @@
-#!/bin/bash -i
+#!/bin/bash
 #using shebang with -i to enable interactive mode (auto load .bashrc)
 #this script was inspired from https://docs.travis-ci.com/user/languages/android/
 

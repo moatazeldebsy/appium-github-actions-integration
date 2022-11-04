@@ -1,4 +1,4 @@
-#!/bin/bash -i
+#!/bin/bash
 #using shebang with -i to enable interactive mode (auto load .bashrc)
 
 set -e #stop immediately if any error happens
