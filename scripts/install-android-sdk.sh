@@ -22,8 +22,8 @@ echo 'export PATH=$SDK/emulator:$SDK/tools:$SDK/tools/bin:$SDK/platform-tools:$P
 source ~/.bashrc
 
 # Install Android Image version 28
-yes | $ANDROID_HOME/tools/bin/sdkmanager "platform-tools" "platforms;android-28" "emulator"
-yes | $ANDROID_HOME/tools/bin/sdkmanager "system-images;android-28;google_apis;x86_64"
+yes | sudo sdkmanager "platform-tools" "platforms;android-28" "emulator"
+yes | sudo sdkmanager "system-images;android-28;google_apis;x86_64"
 emulator -version
 
 echo "INSTALL ANDROID SDK DONE!"
