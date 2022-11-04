@@ -14,18 +14,6 @@ jobs:
         target: [default]
     runs-on: ubuntu-latest
     steps:
-    - name: Install the Emulator
-      run: |
-        chmod +x scripts/install-android-sdk.sh
-        scripts/install-android-sdk.sh
-      shell: bash
-    - name: Boot the Emulator
-      run: |
-        chmod +x scripts/emulator-up.sh
-        scripts/emulator-up.sh
-      shell: bash
-    - name: Install and Run Appium Server
-      uses: moatazeldebsy/Appium-Server-GitHub-Action@V1.0.7 
     - uses: actions/checkout@v2
     - name: Set up JDK 11
       uses: actions/setup-java@v3.6.0
@@ -33,6 +21,19 @@ jobs:
         distribution: 'temurin'
         java-version: 11
         cache: 'gradle'
+    - name: Install the Emulator
+      run: |
+        chmod +x ./scripts/install-android-sdk.sh
+        ./scripts/install-android-sdk.sh
+      shell: bash
+    - name: Boot the Emulator
+      run: |
+        chmod +x ./scripts/emulator-up.sh
+        ./scripts/emulator-up.sh
+      shell: bash
+    - name: Install and Run Appium Server
+      uses: moatazeldebsy/Appium-Server-GitHub-Action@V1.0.7 
+    
     - name: Run Appium Tests
       uses: reactivecircus/android-emulator-runner@v2.27.0
       with:
