@@ -14,10 +14,14 @@ jobs:
         target: [default]
     runs-on: ubuntu-latest
     steps:
-    - name: Install and Boot the Emulator
+    - name: Install the Emulator
       run: |
         chmod +x ./scripts/install-android-sdk.sh
+        
+    - name: Boot the Emulator
+      run: |
         chmod +x ./scripts/emulator-up.sh.sh
+        
     - name: Install and Run Appium Server
       uses: moatazeldebsy/Appium-Server-GitHub-Action@V1.0.7 
     - uses: actions/checkout@v2
