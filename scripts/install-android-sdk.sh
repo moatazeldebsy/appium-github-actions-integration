@@ -4,8 +4,8 @@
 set -e #stop immediately if any error happens
 
 # Install Open SDK
-apt update
-apt install openjdk-8-jdk -y
+sudo apt update
+sudo apt install openjdk-8-jdk -y
 update-java-alternatives --set java-1.8.0-openjdk-amd64
 java -version
 
@@ -14,7 +14,7 @@ java -version
 cd ~ && wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
 ANDROID_HOME=/opt/androidsdk
 mkdir -p $ANDROID_HOME
-apt install unzip -y && unzip sdk-tools-linux-4333796.zip -d $ANDROID_HOME
+sudo apt install unzip -y && unzip sdk-tools-linux-4333796.zip -d $ANDROID_HOME
 
 echo "export ANDROID_HOME=$ANDROID_HOME" >> ~/.bashrc
 echo 'export SDK=$ANDROID_HOME' >> ~/.bashrc
