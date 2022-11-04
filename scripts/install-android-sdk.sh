@@ -6,7 +6,7 @@ set -e #stop immediately if any error happens
 # Install Open SDK
 sudo apt update
 sudo apt install openjdk-8-jdk -y
-update-java-alternatives --set java-1.8.0-openjdk-amd64
+sudo update-java-alternatives --set java-1.8.0-openjdk-amd64
 java -version
 
 # Install SDK Manager
