@@ -7,6 +7,8 @@ set -e #stop immediately if any error happens
 sudo apt update
 sudo apt install openjdk-8-jdk -y
 sudo update-java-alternatives --set java-1.8.0-openjdk-amd64
+sudo apt-get install android-sdk
+
 java -version
 
 # Install SDK Manager
