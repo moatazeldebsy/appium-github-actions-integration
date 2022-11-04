@@ -21,25 +21,15 @@ jobs:
         distribution: 'temurin'
         java-version: 11
         cache: 'gradle'
-    - name: Install the Emulator
-      run: |
-        chmod +x ./scripts/install-android-sdk.sh
-        ./scripts/install-android-sdk.sh
-      shell: bash
-    - name: Boot the Emulator
-      run: |
-        chmod +x ./scripts/emulator-up.sh
-        ./scripts/emulator-up.sh
-      shell: bash
+
     - name: Install and Run Appium Server
       uses: moatazeldebsy/Appium-Server-GitHub-Action@V1.0.7 
     
-    - name: Run Appium Tests
-      uses: reactivecircus/android-emulator-runner@v2.27.0
+    - uses: malinskiy/action-android/emulator-run-cmd@release/0.1.3
       with:
-        api-level: ${{ matrix.api-level }}
-        target: ${{ matrix.target }}
-        arch: x86_64
-        profile: Nexus 6
-        script: ./gradlew test --info
+        cmd: ./gradlew test --info
+        api: ${{ matrix.api-level }}
+        tag: default
+        abi: x86
+
         
