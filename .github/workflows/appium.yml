@@ -18,9 +18,7 @@ jobs:
         java-version: 11
         cache: 'gradle'
     - name: Install and Run Appium Server
-      run: |
-        chmod +x ./scripts/RunAppiumServer.sh # install and run appium server in the background
-        ./scripts/RunAppiumServer.sh
+      uses: moatazeldebsy/appium-server-gitHub-action@V1.0.6
     - name: Run Appium Tests
       uses: reactivecircus/android-emulator-runner@v2.27.0 # install and create the Emulator
       with:
