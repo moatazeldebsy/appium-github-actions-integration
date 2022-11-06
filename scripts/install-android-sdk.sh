@@ -23,12 +23,12 @@ mv tools ~/DevTools/Android/cmdline-tools/
 ls -l ~/DevTools/Android/cmdline-tools/tools
 sudo nano ~/.bashrc
 
-DEV_TOOLS="/home/$USER/DevTools"
-JAVA_HOME="$DEV_TOOLS/JDK/jdk-11.0.7+10"
-ANDROID_HOME="$DEV_TOOLS/Android"
-export JAVA_HOME
-export ANDROID_HOME
-PATH="$JAVA_HOME/bin:$ANDROID_HOME/cmdline-tools/tools/bin:$ANDROID_HOME/platform-tools:$PATH"
+echo DEV_TOOLS="/home/$USER/DevTools"
+echo JAVA_HOME="$DEV_TOOLS/JDK/jdk-11.0.7+10"
+echo ANDROID_HOME="$DEV_TOOLS/Android"
+echo export JAVA_HOME
+echo export ANDROID_HOME
+echo PATH="$JAVA_HOME/bin:$ANDROID_HOME/cmdline-tools/tools/bin:$ANDROID_HOME/platform-tools:$PATH"
 
 source ~/.bashrc
 sdkmanager --version
