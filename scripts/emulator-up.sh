@@ -17,6 +17,6 @@ sleep 160
 #$ANDROID_HOME/tools/bin/emulator -avd avd30 -no-audio -no-window -no-accel &
 
 # show connected virtual device
-adb devices
+#$ANDROID_HOME/platform-tools/adb devices
 
 
