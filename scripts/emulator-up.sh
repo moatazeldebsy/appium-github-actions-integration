@@ -11,5 +11,14 @@ echo "no" | $ANDROID_HOME/tools/bin/avdmanager --verbose create avd --force --na
 $ANDROID_HOME/emulator/emulator-headless @pixel -no-boot-anim -netdelay none -no-snapshot -wipe-data -verbose -show-kernel -no-audio -gpu swiftshader_indirect -no-snapshot &> /tmp/log.txt &
 sleep 160
 
+$ANDROID_HOME/platform-tools/adb wait-for-device
+
 $ANDROID_HOME/platform-tools/adb devices
 
+
+sudo npm install -g appium@next
+appium driver install xcuitest
+appium driver install espresso
+appium driver install flutter
+appium -v
+appium --log appium.log &>/dev/null &
