@@ -21,10 +21,6 @@ jobs:
         distribution: 'temurin'
         java-version: 11
         cache: 'gradle'
-    - name: Install Android SDK
-      run: |
-        chmod +x ./scripts/install-android-sdk.sh
-        ./scripts/install-android-sdk.sh
       
     - name: Install the Emulator
       run: | 
