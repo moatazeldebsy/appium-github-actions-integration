@@ -14,9 +14,6 @@ javac -version
 
 sudo apt update
 
-
-
-ls -l ~/Downloads
 sudo mkdir ~/DevTools
 sudo mkdir ~/DevTools/Android
 sudo mkdir ~/DevTools/Android/cmdline-tools
