@@ -19,8 +19,7 @@ jobs:
       uses: actions/setup-java@v3.6.0
       with:
         distribution: 'temurin'
-        java-version: 11
-        cache: 'gradle'
+        java-version: 8
       
     - name: Install the Emulator
       run: | 
