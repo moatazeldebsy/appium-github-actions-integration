@@ -11,12 +11,5 @@ echo "no" | $ANDROID_HOME/tools/bin/avdmanager --verbose create avd --force --na
 $ANDROID_HOME/emulator/emulator-headless @pixel -no-boot-anim -netdelay none -no-snapshot -wipe-data -verbose -show-kernel -no-audio -gpu swiftshader_indirect -no-snapshot &> /tmp/log.txt &
 sleep 160
 
-#echo no | $ANDROID_HOME/tools/bin/avdmanager create avd -n avd30 -k "system-images;android-32;google_apis_playstore;arm64-v8a"
-
-# start the emulator
-#$ANDROID_HOME/tools/bin/emulator -avd avd30 -no-audio -no-window -no-accel &
-
-# show connected virtual device
-#$ANDROID_HOME/platform-tools/adb devices
-
+$ANDROID_HOME/platform-tools/adb devices
 
