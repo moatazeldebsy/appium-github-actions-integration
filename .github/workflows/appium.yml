@@ -12,7 +12,7 @@ jobs:
       matrix:
         api-level: [28]
         target: [default]
-    runs-on: macos-latest
+    runs-on: ubunut-latest
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11
