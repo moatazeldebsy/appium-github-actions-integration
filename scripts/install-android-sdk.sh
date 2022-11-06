@@ -5,8 +5,7 @@ set -e #stop immediately if any error happens
 
 # Install Open SDK
 sudo apt update
-sudo apt install openjdk-11-jdk -y
-sudo update-java-alternatives --set openjdk-11-jdk-amd64
+sudo apt-get install openjdk-11-jdk -y
 sudo apt-get install android-sdk
 
 java -version
