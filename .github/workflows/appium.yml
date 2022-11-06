@@ -37,8 +37,11 @@ jobs:
         distribution: 'temurin'
         java-version: 11
       
-    - name: Run the UI Tests
-      run: | 
-          appium --log appium.log &>/dev/null &
-          #$ANDROID_HOME/platform-tools/adb devices
-          ./gradlew test
+    - name: Run Appium
+      run: appium --log appium.log &>/dev/null &
+    - name: Run ADB Devices
+      run: |
+        #$ANDROID_HOME/platform-tools/adb devices
+    
+    - name: Run UI tests
+      run: ./gradlew test
