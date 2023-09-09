@@ -34,9 +34,19 @@ public class DemoTest {
         driver.findElement(By.id("buttonFour")).click();
         driver.findElement(By.id("buttonEqual")).click();
     }
+
+    @Test
+    public void test_Appium2() {
+        driver.findElement(By.id("buttonFive")).click();
+        driver.findElement(By.id("buttonAdd")).click();
+        driver.findElement(By.id("buttonFour")).click();
+        driver.findElement(By.id("buttonEqual")).click();
+    }
+    
     @AfterClass
     public void tearDown()
     {
         driver.quit();
     }
+
 }
